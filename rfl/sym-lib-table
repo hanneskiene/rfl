@@ -1,0 +1,7 @@
+(sym_lib_table
+	(version 7)
+	(lib (name "rfl_lib") (type "KiCad") (uri "${KIPRJMOD}/rfl_lib.kicad_sym") (options "") (descr ""))
+	(lib (name "et-misc") (type "KiCad") (uri "${KICAD_ET_LIB}/et-misc.kicad_sym") (options "") (descr ""))
+	(lib (name "et-misc-2") (type "KiCad") (uri "${KICAD_ET_LIB}/et-misc-2.kicad_sym") (options "") (descr ""))
+	(lib (name "lxp4lib") (type "KiCad") (uri "/home/hannes/Documents/lxp4-hw/lxp4-power/lxp4lib.kicad_sym") (options "") (descr ""))
+)
