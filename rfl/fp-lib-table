@@ -1,0 +1,4 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "rfl-lib-fp") (type "KiCad") (uri "${KIPRJMOD}/rfl-lib-fp.pretty") (options "") (descr ""))
+)
