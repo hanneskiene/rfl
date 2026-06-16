@@ -9669,7 +9669,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "10k"
 			(at 163.83 48.2599 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9888,6 +9888,17 @@
 			(at 180.34 144.78 0)
 			(hide yes)
 			(show_name yes)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PartNo" "NX2016SA-52.000000MHZ"
+			(at 193.04 144.78 90)
+			(hide yes)
+			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
@@ -10907,7 +10918,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "1k2"
 			(at 307.34 138.43 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11261,6 +11272,17 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x14, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 246.38 227.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PartNo" "61301421121"
 			(at 246.38 227.33 0)
 			(hide yes)
 			(show_name no)
@@ -11995,7 +12017,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "16k"
 			(at 163.83 38.0999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12155,7 +12177,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "10k"
 			(at 161.29 166.3699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13350,7 +13372,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "1k2"
 			(at 69.85 171.45 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14054,7 +14076,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "1k2"
 			(at 69.85 158.75 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14317,7 +14339,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "2k2"
 			(at 313.69 135.89 90)
 			(show_name no)
 			(do_not_autoplace no)

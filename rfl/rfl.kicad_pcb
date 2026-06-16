@@ -1060,7 +1060,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "1k2"
 			(at 0 1.17 0)
 			(layer "F.Fab")
 			(uuid "dd7b4ded-8271-4f8b-afce-f9d777e0bbd1")
@@ -1550,7 +1550,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "16k"
 			(at 0 1.17 90)
 			(layer "F.Fab")
 			(uuid "304f3563-6f6f-40f3-b19f-3b81bf5004dd")
@@ -2753,7 +2753,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "10k"
 			(at 0 1.17 90)
 			(layer "F.Fab")
 			(uuid "4e4125e9-71a6-4665-aa12-72d8d24a34ae")
@@ -3892,7 +3892,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "1k2"
 			(at 0 1.17 0)
 			(layer "F.Fab")
 			(uuid "ab1b3686-c542-4b2a-a392-47dcde45c976")
@@ -5323,7 +5323,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "2k2"
 			(at 0 1.17 0)
 			(layer "F.Fab")
 			(uuid "b241f65e-09c8-4224-93a0-2494b73720d6")
@@ -5482,7 +5482,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "1k2"
 			(at 0 1.17 0)
 			(layer "F.Fab")
 			(uuid "5c18e220-963c-4b73-8f7a-0954ab1e3bce")
@@ -7692,6 +7692,19 @@
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "bdb08136-cfdb-415a-8323-916b91ba8ad2")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "PartNo" "NX2016SA-52.000000MHZ"
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8e62f50c-243f-44aa-a6a0-cd32208110ba")
 			(effects
 				(font
 					(size 1 1)
@@ -10086,6 +10099,19 @@
 				)
 			)
 		)
+		(property "PartNo" "61301421121"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d1159867-7552-4bb0-b789-5a2a177dfa14")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/4aa3e1d1-dc5c-489a-ba63-a10f728e2d3f")
 		(sheetname "/")
@@ -10323,7 +10349,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "10k"
 			(at 0 1.17 0)
 			(layer "F.Fab")
 			(uuid "4342cf40-6fe2-4f92-b4a1-1e457d26ac14")
@@ -10791,6 +10817,7 @@
 		(property "Reference" "J802"
 			(at 0 4.285 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "75491f84-3b69-4272-bc6f-7374808bb13c")
 			(effects
 				(font
