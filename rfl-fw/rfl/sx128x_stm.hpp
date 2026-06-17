@@ -62,7 +62,7 @@ public:
         setStandby();
         setPacketTypeLoRa();
         setFrequency(2445000000UL);
-        setTxPower(1);
+        setTxPower(-15);
         setLoRaParams(
             0x70,   // SF7
             0x18,   // BW 812kHz
@@ -70,7 +70,7 @@ public:
 
         setPacketParams(
             12,     // preamble
-            8,      // payload length
+            20,      // payload length
             true,   // crc
             false); // explicit header
 
