@@ -40,7 +40,7 @@ public:
         send(slot);
     }
 
-    uint16_t channels[8]{};
+    uint16_t channels[8]{1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500};
 
 private:
     SX1281& sx;

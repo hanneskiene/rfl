@@ -15,6 +15,9 @@
 #include "sender.hpp"
 #include "receiver.hpp"
 
+#include "pwm_out.hpp"
+#include "ppm_in.hpp"
+
 extern "C" int _write(int file, char *ptr, int len) {
     CDC_Transmit_FS((uint8_t*) ptr, len);
     return len;
@@ -44,9 +47,22 @@ int main()
 
   sx.begin();
 
-  char mode = 'x';
+  char mode = 'r';
   Sender s{sx};
   Receiver r{sx};
+
+  PwmOut pwm{};
+  PPMInput ppm{};
+  ppm.start();
+  HAL_Delay(500);
+  if(ppm.frameValid){
+	  mode = 's';
+  }else{
+	  mode = 'r';
+	  ppm.stop();
+	  pwm.start();
+  }
+
   uint32_t last_status_ts{};
   while(true){
 	  if(rx_ready){
@@ -56,17 +72,23 @@ int main()
 			  case 'd': printf("OK\n"); break;
 			  case 'r': mode = 'r'; printf("Mode Receiver\n"); break;
 			  case 's': mode = 's'; printf("Mode Sender\n");break;
-			  case 'i': printf("Incr\n"); s.channels[0]++; break;
+			  case '+': printf("Incr\n"); s.channels[0]+=50; break;
+			  case '-': printf("Decr\n"); s.channels[0]-=50; break;
 			  case 'b': enter_bootloader(1234); break;
 		  }
 	  }
 	  switch(mode){
 	  case 'r':{
 		  r.tick();
-		  if(HAL_GetTick() - last_status_ts > 1000){last_status_ts = HAL_GetTick(); printf("Rx %i %ims %idBm\n", r.channels[0], (int)r.avg_delta, r.lastRSSI);}
+		  pwm.set(r.channels[0], r.channels[1], r.channels[2], r.channels[3]);
+		  //if(HAL_GetTick() - last_status_ts > 1000){last_status_ts = HAL_GetTick(); printf("Rx %i %ims %idBm\n", ppm.channels[0], (int)r.avg_delta, r.lastRSSI);}
 		  break;
 	  }
-	  case 's': s.tick(); break;
+	  case 's':{
+		  for(int i = 0; i < 4; i++){s.channels[i] = ppm.channels[i];}
+		  s.tick();
+		  break;
+	  }
 	  default: break;
 	  }
   }

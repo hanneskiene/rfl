@@ -9112,7 +9112,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D_TVS"
+		(property "Value" "CPDQC3V3C-HF"
 			(at 203.2 205.7399 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9428,7 +9428,7 @@
 				)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "100n"
 			(at 335.28 111.76 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9508,7 +9508,7 @@
 				)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "100n"
 			(at 208.28 110.49 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9588,7 +9588,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "100R"
 			(at 195.58 227.33 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10590,7 +10590,7 @@
 				)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "470n"
 			(at 250.19 125.73 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11517,7 +11517,7 @@
 				)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "100n"
 			(at 233.68 118.11 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11699,7 +11699,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "6p8"
 			(at 193.04 236.2199 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12652,7 +12652,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D_TVS"
+		(property "Value" "CPDQC3V3C-HF"
 			(at 203.2 236.2199 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12972,7 +12972,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "100R"
 			(at 195.58 196.85 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13052,7 +13052,7 @@
 				)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "100n"
 			(at 104.14 118.11 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13132,7 +13132,7 @@
 				)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "100n"
 			(at 325.12 123.19 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13531,7 +13531,7 @@
 				)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "100n"
 			(at 208.28 121.92 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14259,7 +14259,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "100R"
 			(at 195.58 212.09 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14419,7 +14419,7 @@
 				)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "100n"
 			(at 104.14 106.68 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14843,7 +14843,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "100R"
 			(at 195.58 243.84 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14923,7 +14923,7 @@
 				)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "100n"
 			(at 335.28 123.19 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15004,7 +15004,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D_TVS"
+		(property "Value" "CPDQC3V3C-HF"
 			(at 203.2 252.7299 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15399,7 +15399,7 @@
 				)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "100n"
 			(at 208.28 99.06 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15794,7 +15794,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D_TVS"
+		(property "Value" "CPDQC3V3C-HF"
 			(at 203.2 220.9799 90)
 			(show_name no)
 			(do_not_autoplace no)
