@@ -62,7 +62,7 @@ public:
         setStandby();
         setPacketTypeLoRa();
         setFrequency(2445000000UL);
-        setTxPower(-15);
+        setTxPower(-5); // ca. 22dB Amp Gain + Antenna Gain (20dBm Iso Eu limit)
         setLoRaParams(
             0x70,   // SF7
             0x18,   // BW 812kHz
@@ -88,6 +88,16 @@ public:
         LL_GPIO_SetOutputPin(rstPort_, rstPin_);
         HAL_Delay(20);
         waitBusy();
+    }
+
+    void sky_set_ant(int num)
+    {
+    	if(num) LL_GPIO_SetOutputPin(sky_antsel_GPIO_Port, sky_antsel_Pin);
+    	else LL_GPIO_ResetOutputPin(sky_antsel_GPIO_Port, sky_antsel_Pin);
+    }
+    void sky_toggle_ant()
+    {
+    	LL_GPIO_TogglePin(sky_antsel_GPIO_Port, sky_antsel_Pin);
     }
 
     void setStandby()
@@ -173,6 +183,7 @@ public:
         const uint8_t* data,
         uint8_t len)
     {
+    	sky_set_ant(0);
     	sky_tx_amp();
         writeBuffer(0, data, len);
 
@@ -199,6 +210,7 @@ public:
         uint8_t* data,
         uint32_t timeout_ms = 5000)
     {
+    	sky_rx_lna();
     	uint8_t timeout[3] =
     	{
     	    static_cast<uint8_t>(0x02), // 1 ms base
@@ -231,7 +243,7 @@ public:
         getPacketStatus();
 
         clearIrqStatus(0xFFFF);
-
+        sky_bypass();
         return payloadLength;
     }
 

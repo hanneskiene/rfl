@@ -16,7 +16,9 @@ struct PwmOut{
 	void start()
 	{
 		LL_APB2_GRP1_ForceReset(LL_APB2_GRP1_PERIPH_TIM1);
+		HAL_Delay(1);
 		LL_APB2_GRP1_ReleaseReset(LL_APB2_GRP1_PERIPH_TIM1);
+		HAL_Delay(1);
 
 		LL_TIM_InitTypeDef TIM_InitStruct = {0};
 		LL_TIM_OC_InitTypeDef TIM_OC_InitStruct = {0};
@@ -33,7 +35,7 @@ struct PwmOut{
 		NVIC_SetPriority(TIM1_CC_IRQn, 0);
 		NVIC_EnableIRQ(TIM1_CC_IRQn);
 
-		TIM_InitStruct.Prescaler = 35;
+		TIM_InitStruct.Prescaler = 31;
 		TIM_InitStruct.CounterMode = LL_TIM_COUNTERMODE_UP;
 		TIM_InitStruct.Autoreload = 20000;
 		TIM_InitStruct.ClockDivision = LL_TIM_CLOCKDIVISION_DIV1;
@@ -67,7 +69,7 @@ struct PwmOut{
 		TIM_BDTRInitStruct.Break2Polarity = LL_TIM_BREAK2_POLARITY_HIGH;
 		TIM_BDTRInitStruct.Break2Filter = LL_TIM_BREAK2_FILTER_FDIV1;
 		TIM_BDTRInitStruct.Break2AFMode = LL_TIM_BREAK_AFMODE_INPUT;
-		TIM_BDTRInitStruct.AutomaticOutput = LL_TIM_AUTOMATICOUTPUT_DISABLE;
+		TIM_BDTRInitStruct.AutomaticOutput = LL_TIM_AUTOMATICOUTPUT_ENABLE;
 		LL_TIM_BDTR_Init(TIM1, &TIM_BDTRInitStruct);
 		/* USER CODE BEGIN TIM1_Init 2 */
 
@@ -84,10 +86,12 @@ struct PwmOut{
 		GPIO_InitStruct.Alternate = LL_GPIO_AF_1;
 		LL_GPIO_Init(d3_GPIO_Port, &GPIO_InitStruct);
 
+		HAL_Delay(1);
+
 
 		LL_TIM_CC_EnableChannel(TIM1, LL_TIM_CHANNEL_CH3);
 		LL_TIM_CC_EnableChannel(TIM4, LL_TIM_CHANNEL_CH2|LL_TIM_CHANNEL_CH3);
-		LL_TIM_CC_EnableChannel(TIM16, LL_TIM_CHANNEL_CH3);
+		LL_TIM_CC_EnableChannel(TIM16, LL_TIM_CHANNEL_CH1);
 		LL_TIM_EnableCounter(TIM1);
 		LL_TIM_EnableCounter(TIM4);
 		LL_TIM_EnableCounter(TIM16);

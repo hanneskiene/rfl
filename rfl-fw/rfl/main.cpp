@@ -65,6 +65,7 @@ int main()
 
   uint32_t last_status_ts{};
   while(true){
+	  LL_IWDG_ReloadCounter(IWDG);
 	  if(rx_ready){
 		  LL_GPIO_TogglePin(led1_GPIO_Port, led1_Pin);
 		  char c = getchar();
@@ -72,15 +73,16 @@ int main()
 			  case 'd': printf("OK\n"); break;
 			  case 'r': mode = 'r'; printf("Mode Receiver\n"); break;
 			  case 's': mode = 's'; printf("Mode Sender\n");break;
-			  case '+': printf("Incr\n"); s.channels[0]+=50; break;
-			  case '-': printf("Decr\n"); s.channels[0]-=50; break;
+			  case 'i': printf("%i, %i, %i, %i, at %ims and %idBm\n", r.channels[0], r.channels[1], r.channels[2], r.channels[3], (int)r.avg_delta,  r.lastRSSI); break;
 			  case 'b': enter_bootloader(1234); break;
+			  case 'c': while(true){} break;
 		  }
 	  }
 	  switch(mode){
 	  case 'r':{
 		  r.tick();
-		  pwm.set(r.channels[0], r.channels[1], r.channels[2], r.channels[3]);
+		  if(r.receiving()) pwm.set(r.channels[0], r.channels[1], r.channels[2], r.channels[3]);
+		  else pwm.set(1500, 1500, 1000, 1500);
 		  //if(HAL_GetTick() - last_status_ts > 1000){last_status_ts = HAL_GetTick(); printf("Rx %i %ims %idBm\n", ppm.channels[0], (int)r.avg_delta, r.lastRSSI);}
 		  break;
 	  }

@@ -27,6 +27,11 @@ public:
         return track();
     }
 
+    bool receiving()
+    {
+    	return state == TRACK;
+    }
+
     uint16_t channels[8]{};
     int lastRSSI = 0;
     float avg_delta  = 0.f;
@@ -85,6 +90,7 @@ private:
             slotRxDone = false;
 
             sx.setFrequency(HopTable[currentSlot % HopCount]);
+            sx.sky_toggle_ant();
         }
 
         // if we already successfully received a packet in this slot → do nothing
