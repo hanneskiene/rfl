@@ -240,11 +240,11 @@ public:
             data,
             payloadLength);
 
-        getPacketStatus();
+        bool ok = getPacketStatusValid();
 
         clearIrqStatus(0xFFFF);
         sky_bypass();
-        return payloadLength;
+        return payloadLength;//*ok;
     }
 
     int lastSNRDb{};
@@ -432,7 +432,7 @@ private:
         startPointer  = r[1];
     }
 
-    void getPacketStatus()
+    bool getPacketStatusValid()
     {
         uint8_t buf[5];
 
@@ -440,6 +440,14 @@ private:
 
         lastRSSIDbm = -buf[0] / 2;
         lastSNRDb = ((int8_t)buf[1]) / 4;
+
+        uint8_t err = buf[2];
+        bool crcError    = err & (1 << 4);
+        bool lengthError = err & (1 << 5);
+        bool syncError   = err & (1 << 6);
+        bool abortError  = err & (1 << 3);
+
+        return !(crcError || lengthError || syncError || abortError);
     }
 
     void sky_sleep()

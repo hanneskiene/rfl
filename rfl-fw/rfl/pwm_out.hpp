@@ -8,6 +8,10 @@
 #ifndef PWM_OUT_HPP_
 #define PWM_OUT_HPP_
 
+#include <algorithm>
+
+bool inrange(int val, int l, int h) { return (val>=l) && (val<h); }
+
 struct PwmOut{
 	PwmOut()
 	{
@@ -103,10 +107,10 @@ struct PwmOut{
 
 	void set(int c1, int c2, int c3, int c4)
 	{
-		LL_TIM_OC_SetCompareCH3(TIM1, c3);
-		LL_TIM_OC_SetCompareCH2(TIM4, c2);
-		LL_TIM_OC_SetCompareCH3(TIM4, c1);
-		LL_TIM_OC_SetCompareCH1(TIM16, c4);
+		if(inrange(c3, 1100, 1900)) LL_TIM_OC_SetCompareCH3(TIM1, c3);
+		if(inrange(c2, 1100, 1900)) LL_TIM_OC_SetCompareCH2(TIM4, c2);
+		if(inrange(c1, 1100, 1900)) LL_TIM_OC_SetCompareCH3(TIM4, c1);
+		if(inrange(c4, 1100, 1900)) LL_TIM_OC_SetCompareCH1(TIM16, c4);
 	}
 };
 
